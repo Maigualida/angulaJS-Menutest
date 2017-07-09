@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app='MsgApp'>
+
+<head>
+	<meta charset="utf-8">
+
+
+	<style>
+		body {
+			font-size: 1.5em;
+		}
+
+		img {
+			height: 200px;
+		}
+
+		.red {
+			color: red;
+		}
+
+		.green {
+			color: green;
+		}
+	</style>
+	<title>How much do you eat?</title>
+</head>
+
+<body>
+	<h1>How much do you eat?</h1>
+	<div ng-controller='MsgController'>
+		<p>Please introduce what you usually eat for lunch, list comma-separated:
+			<p>
+				<input type="text" ng-model="menu">
+				<button ng-click="check()">Check If Too Much</button> {{messege}}
+				<p ng-class="{red:menu.length == 0, green: menu.length > 3}">{{messsege}}</p>
+				<img ng-if="messege == 'Enjoy'" ng-src="https://www.abi.org.uk/globalassets/sitecore/images/subjects/pensions/your-retirement-your-choice/enjoy.png">
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="app.js"></script>
+</body>
+
+</html>
